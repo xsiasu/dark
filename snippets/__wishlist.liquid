@@ -1,0 +1,73 @@
+{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .wishlist---area {
+    padding: 36px 0;
+  }
+{%- endstyle -%}
+<style>
+  /* Style for product display can be added based on your design requirements */
+  @media only screen and (min-width: 750px) {
+    .js-wishlistBlock {
+    }
+  }
+
+  .c-product {
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  .c-product img {
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+  }
+
+  .c-product img:hover {
+  }
+
+  .c-product h3.c-product__title {
+    margin-top: 10px;
+    position: relative;
+  }
+
+  .box-rounded {
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 2px 4px 12px #00000014;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: solid 1px #efefef;
+  }
+  .box-rounded-devide > .card__content .card__information {
+    padding: 10px 0;
+  }
+  .box-rounded-devide > .card__inner {
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 2px 4px 3px #00000005;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: solid 1px #efefef;
+    display: block;
+  }
+  .wishlist-container {
+    margin-top: 50px;
+    padding: 0 15px;
+  }
+</style>
+<div class="collection-hero">
+  <div class="collection-hero__inner page-inner-width">
+    <div class="collection-hero__text-wrapper">
+      <h1 class="collection-hero__title fw-bold{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        お気に入り
+      </h1>
+    </div>
+  </div>
+</div>
+
+<div class="page-width wishlist---area">
+  <div class="container">
+    <ul class="js-wishlistBlock row list-unstyled"></ul>
+  </div>
+</div>

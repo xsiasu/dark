@@ -1,0 +1,244 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "custom_liquid_CM4AbX": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"table-responsive\">\n  <table class=\"table table-bordered\">\n    <thead class=\"table-light\">\n      <tr class=\"sticky\">\n        <th\n          style=\"width: 50px\"\n          class=\"sticky fw-normal fs-5 align-middle text-center\"\n        >\n          サイズ\n        <\/th>\n        <th style=\"width: 65px\" class=\"fs-5 fw-normal align-middle text-center\">\n          肩幅\n        <\/th>\n        <th style=\"width: 58px\" class=\"fs-5 fw-normal align-middle text-center\">\n          胸囲\n        <\/th>\n        <th style=\"width: 50px\" class=\"fs-6 fw-normal align-middle text-center\">\n          着丈\n        <\/th>\n        <th\n          style=\"width: 73.2969px\"\n          class=\"fs-6 fw-normal align-middle text-center\"\n        >\n          袖丈\n        <\/th>\n      <\/tr>\n    <\/thead>\n    <tbody>\n      <tr>\n        <td class=\"sticky text-center\">M<\/td>\n        <td class=\"sticky text-center\">55.8<\/td>\n        <td class=\"sticky text-center\">60<\/td>\n        <td class=\"sticky text-center\">56.5<\/td>\n        <td class=\"sticky text-center\">73<\/td>\n      <\/tr>\n      <tr>\n        <td class=\"sticky text-center\">L<\/td>\n        <td class=\"sticky text-center\">57<\/td>\n        <td class=\"sticky text-center\">62<\/td>\n        <td class=\"sticky text-center\">58<\/td>\n        <td class=\"sticky text-center\">75<\/td>\n      <\/tr>\n\n      <tr>\n        <td class=\"sticky text-center\">XL<\/td>\n        <td class=\"sticky text-center\">58.2<\/td>\n        <td class=\"sticky text-center\">64<\/td>\n        <td class=\"sticky text-center\">59.5<\/td>\n        <td class=\"sticky text-center\">77<\/td>\n      <\/tr>\n      <tr>\n        <td class=\"sticky text-center\">2XL<\/td>\n        <td class=\"sticky text-center\">59.4<\/td>\n        <td class=\"sticky text-center\">66<\/td>\n        <td class=\"sticky text-center\">61<\/td>\n        <td class=\"sticky text-center\">79<\/td>\n      <\/tr>\n    <\/tbody>\n  <\/table>\n<\/div>\n<button\n  type=\"button\"\n  class=\"btn btn-link\"\n  data-bs-toggle=\"modal\"\n  data-bs-target=\"#modal-size---{{ product.metafields.custom.product_number }}\"\n  data-bs-whatever=\"@mdo\"\n>\n  サイズガイド\n<\/button>"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "wishlist_Pr7EHh": {
+          "type": "wishlist",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "product_info_qxPnwY": {
+          "type": "product_info",
+          "settings": {
+            "heading": "商品情報",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_yUy7Un": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "配送",
+            "icon": "none",
+            "content": "",
+            "page": "delivery"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "custom_liquid_CM4AbX",
+        "quantity_selector",
+        "wishlist_Pr7EHh",
+        "buy_buttons",
+        "share",
+        "product_info_qxPnwY",
+        "collapsible_tab_yUy7Un",
+        "description"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": false,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "product_detail_jV4Vyt": {
+      "type": "product-detail",
+      "blocks": {
+        "text_cghVDE": {
+          "type": "text",
+          "settings": {
+            "text": "テキストブロック",
+            "text_style": "body"
+          }
+        },
+        "couple_image_xtwtPz": {
+          "type": "couple_image",
+          "settings": {
+            "description_couple_image_01": "shopify:\/\/shop_images\/fiu_0045_Overview-9_5b7f3f60-10f1-42be-b048-ed964f237461.jpg",
+            "image_overlay_bg_couple_image_01": "#FDFFD6",
+            "image_overlay_border_image_01": "#000000",
+            "show_text_content_01": false,
+            "image_overlay_opacity_image_01": 80,
+            "txt_heading_01": "商品名",
+            "txt_description_01": "商品の説明",
+            "box_align_couple_01": "middle-left",
+            "description_couple_image_02": "shopify:\/\/shop_images\/fiu_0045_Overview-8_2e7dd130-4409-4680-9f0e-2f6f08d12216.jpg",
+            "image_overlay_bg_couple_image_02": "#FDFFD6",
+            "image_overlay_border_image_02": "#000000",
+            "show_text_content_02": false,
+            "image_overlay_opacity_image_02": 80,
+            "txt_heading_02": "商品名",
+            "txt_description_02": "商品の説明",
+            "box_align_couple_02": "middle-left"
+          }
+        },
+        "single_image_xwkdnA": {
+          "type": "single_image",
+          "settings": {
+            "description_single_image": "shopify:\/\/shop_images\/fiu_0045_Overview-7_140dd9e0-aba6-4ad9-b0d6-d130dfe56ab0.jpg",
+            "image_overlay_bg": "#FDFFD6",
+            "image_overlay_border": "#000000",
+            "image_overlay_opacity": 80,
+            "show_single_text_content_01": false,
+            "txt_heading": "商品名",
+            "txt_description": "商品の説明",
+            "box_align": "middle-left"
+          }
+        },
+        "couple_image_gkdKcz": {
+          "type": "couple_image",
+          "settings": {
+            "description_couple_image_01": "shopify:\/\/shop_images\/fiu_0045_Main_image-4_c5d40c32-7778-475a-b760-013aa621a41e.jpg",
+            "image_overlay_bg_couple_image_01": "#FDFFD6",
+            "image_overlay_border_image_01": "#000000",
+            "show_text_content_01": false,
+            "image_overlay_opacity_image_01": 80,
+            "txt_heading_01": "商品名",
+            "txt_description_01": "商品の説明",
+            "box_align_couple_01": "middle-left",
+            "description_couple_image_02": "shopify:\/\/shop_images\/fiu_0045_Main_image-5_e07e29b0-5bb0-4ed1-92d7-cd5526d2e254.jpg",
+            "image_overlay_bg_couple_image_02": "#FDFFD6",
+            "image_overlay_border_image_02": "#000000",
+            "show_text_content_02": false,
+            "image_overlay_opacity_image_02": 80,
+            "txt_heading_02": "商品名",
+            "txt_description_02": "商品の説明",
+            "box_align_couple_02": "middle-left"
+          }
+        },
+        "couple_image_QDzUYH": {
+          "type": "couple_image",
+          "settings": {
+            "description_couple_image_01": "shopify:\/\/shop_images\/fiu_0045_Main_image-2_09596996-7452-4f7b-a3bd-426d4e583441.jpg",
+            "image_overlay_bg_couple_image_01": "#FDFFD6",
+            "image_overlay_border_image_01": "#000000",
+            "show_text_content_01": false,
+            "image_overlay_opacity_image_01": 80,
+            "txt_heading_01": "商品名",
+            "txt_description_01": "商品の説明",
+            "box_align_couple_01": "middle-left",
+            "description_couple_image_02": "shopify:\/\/shop_images\/fiu_0045_Main_image-3_0b1bc4b0-a0a4-4b63-8df0-4a7d51efde13.jpg",
+            "image_overlay_bg_couple_image_02": "#FDFFD6",
+            "image_overlay_border_image_02": "#000000",
+            "show_text_content_02": false,
+            "image_overlay_opacity_image_02": 80,
+            "txt_heading_02": "商品名",
+            "txt_description_02": "商品の説明",
+            "box_align_couple_02": "middle-left"
+          }
+        }
+      },
+      "block_order": [
+        "text_cghVDE",
+        "couple_image_xtwtPz",
+        "single_image_xwkdnA",
+        "couple_image_gkdKcz",
+        "couple_image_QDzUYH"
+      ],
+      "settings": {
+        "clothes_type": "shirt",
+        "size_image": "shopify:\/\/shop_images\/size___long-sleeve-ja_JP_2x.b6271b25.jpg",
+        "size_html": "<div class=\"table-responsive\">\n  <table class=\"table table-bordered\">\n    <thead class=\"table-light\">\n      <tr class=\"sticky\">\n        <th style=\"width: 50px\" class=\"sticky fw-normal fs-5 align-middle text-center\">\n          サイズ\n        <\/th>\n        <th style=\"width: 65px\" class=\"fs-5 fw-normal align-middle text-center\">\n          肩幅\n        <\/th>\n        <th style=\"width: 58px\" class=\"fs-5 fw-normal align-middle text-center\">\n          胸囲\n        <\/th>\n        <th style=\"width: 50px\" class=\"fs-6 fw-normal align-middle text-center\">\n          着丈\n        <\/th>\n        <th style=\"width: 73.2969px\" class=\"fs-6 fw-normal align-middle text-center\">\n          袖丈\n        <\/th>\n      <\/tr>\n    <\/thead>\n    <tbody>\n      <tr>\n        <td class=\"sticky text-center\">M<\/td>\n        <td class=\"sticky text-center\">55.8<\/td>\n        <td class=\"sticky text-center\">60<\/td>\n        <td class=\"sticky text-center\">56.5<\/td>\n        <td class=\"sticky text-center\">73<\/td>\n      <\/tr>\n      <tr>\n        <td class=\"sticky text-center\">L<\/td>\n        <td class=\"sticky text-center\">57<\/td>\n        <td class=\"sticky text-center\">62<\/td>\n        <td class=\"sticky text-center\">58<\/td>\n        <td class=\"sticky text-center\">75<\/td>\n      <\/tr>\n\n      <tr>\n        <td class=\"sticky text-center\">XL<\/td>\n        <td class=\"sticky text-center\">58.2<\/td>\n        <td class=\"sticky text-center\">64<\/td>\n        <td class=\"sticky text-center\">59.5<\/td>\n        <td class=\"sticky text-center\">77<\/td>\n      <\/tr>\n      <tr>\n        <td class=\"sticky text-center\">2XL<\/td>\n        <td class=\"sticky text-center\">59.4<\/td>\n        <td class=\"sticky text-center\">66<\/td>\n        <td class=\"sticky text-center\">61<\/td>\n        <td class=\"sticky text-center\">79<\/td>\n      <\/tr>\n    <\/tbody>\n  <\/table>\n<\/div>",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "17210937692851797c": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "<strong>関連商品<\/strong>",
+        "heading_size": "h1",
+        "products_to_show": 4,
+        "columns_desktop": 5,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 80,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_detail_jV4Vyt",
+    "17210937692851797c",
+    "related-products"
+  ]
+}

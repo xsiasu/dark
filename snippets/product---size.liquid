@@ -1,0 +1,770 @@
+<style>
+  /* styles.css */
+
+  .form-step {
+    display: none;
+  }
+
+  .form-step-active {
+    position: relative;
+    display: block;
+    min-height: calc(100vh - 95px);
+  }
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #222121;
+  }
+
+  .wrap-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .box-descrip {
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    padding: 9px 10px;
+    line-height: 1.2;
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  .p-descrip {
+    padding: 5px 0;
+    line-height: 1.2;
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox  */
+  input[type='number'] {
+    -moz-appearance: none;
+  }
+
+  .form-controls,
+  .form-controls:focus,
+  .form-controls:hover {
+    padding: 0;
+    margin: 0;
+    border: solid 1px transparent;
+    box-shadow: none;
+    font-size: 5rem;
+    font-weight: bold;
+    outline: 0;
+    position: relative;
+    min-width: 0;
+    line-height: normal;
+    width: 100px;
+  }
+  .input---area {
+    position: relative;
+    margin-top: 15px;
+  }
+
+  .radio---area {
+    margin-top: 50px;
+    padding:0 20px
+  }
+  .span-text {
+    display: flex;
+    align-items: end;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--bs-body-color);
+    position: relative;
+    top: -10px;
+  }
+
+  .content---area {
+    position: absolute;
+    width: 100%;
+    top: 42%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    padding-bottom: 55px;
+  }
+  .order---area {
+  }
+  .order---area .list---order {
+  }
+  .error-message {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    color: red;
+    margin-top: 10px;
+    display: none;
+    text-align: center;
+  }
+  .need-area {
+    margin-top: 2rem;
+  }
+  .ico-img {
+    width: 53px;
+    display: inline-block;
+    padding: 8px 0 0px 0;
+  }
+  .summary-title {
+    font-size: 1.7rem;
+  }
+  .summary-data {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  .btn-label {
+    width: 100%;
+    font-size: 1.8rem;
+    padding: 15px 0;
+  }
+  .btn-button {
+    {% comment %} min-width: calc(8 * 2.65vw); {% endcomment %}
+
+  }
+  .form-controls:not(.has-value) {
+    border-bottom: solid 1px #000;
+  }
+
+  .has-value {
+    border-bottom: solid 1px transparent;
+  }
+  .text-shopping {
+    font-size:1.5rem
+  }
+  .ico---arrow---left {
+    position:relative;
+    top:-2px
+  }
+
+  @media (min-width: 640px) {
+    .form-step-active {
+      min-height: 600px;
+    }
+  }
+</style>
+
+<div
+  class="modal"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+  style="background:rgba(0,0,0,.5)"
+>
+  <div class="modal-dialog modal-fullscreen-sm-down">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom:0;padding-bottom:0">
+        <span data-bs-dismiss="modal" aria-label="Close">
+          <svg
+            width="16"
+            class="ico---arrow---left"
+            height="12"
+            viewBox="0 0 16 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            __source="[object Object]"
+          >
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15 5.00001H3.41401L6.70701 1.70701C7.09801 1.31601 7.09801 0.684006 6.70701 0.293006C6.31601 -0.0979941 5.68401 -0.0979941 5.29301 0.293006L0.293006 5.29301C-0.0979941 5.68401 -0.0979941 6.31601 0.293006 6.70701L5.29301 11.707C5.48801 11.902 5.74401 12 6.00001 12C6.25601 12 6.51201 11.902 6.70701 11.707C7.09801 11.316 7.09801 10.684 6.70701 10.293L3.41401 7.00001H15C15.553 7.00001 16 6.55201 16 6.00001C16 5.44801 15.553 5.00001 15 5.00001Z" fill="currentColor"></path>
+          </svg>
+          <span class="text-shopping">
+            {{ 'product_size.top.shopping' | t }}
+          </span>
+        </span>
+      </div>
+      <div class="modal-body">
+        <form
+          action="/cart/add"
+          method="post"
+          enctype="multipart/form-data"
+          id="product-form-{{ product.id }}"
+          class="input---form"
+        >
+          <!-- Product ID and other required hidden fields -->
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+          <div class="">
+            <div
+              class="progress"
+              role="progressbar"
+              aria-label="Default striped example"
+              aria-valuenow="10"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="height:2rem"
+            >
+              <div class="progress-bar progress-bar-striped progress-bar-animated" style="height:2rem;width:0">
+                perset
+              </div>
+            </div>
+          </div>
+
+          <div class="form-step form-step-active" data-step="1">
+            <p class="box-descrip">
+              {{ 'product_size.setp01.description' | t }}
+            </p>
+            <h2 class="title">{{ 'product_size.setp01.title' | t }}</h2>
+
+            <div class="content---area">
+              <div class="d-flex justify-content-center">
+                <img
+                  class=""
+                  src="{{ '__bogu_all.png' | asset_url }}"
+                  alt=""
+                  height="auto"
+                  width="200"
+                  loading="eager"
+                >
+              </div>
+
+              <div class="need-area">
+                <ul class="d-flex list-unstyled justify-content-around">
+                  <li>
+                    <img
+                      class=""
+                      src="{{ '__head_height_small.png' | asset_url }}"
+                      alt=""
+                      height="auto"
+                      width="40"
+                      loading="eager"
+                    >
+                  </li>
+                  <li>
+                    <img
+                      class=""
+                      src="{{ '__head_width_small.png' | asset_url }}"
+                      alt=""
+                      height="auto"
+                      width="40"
+                      loading="eager"
+                    >
+                  </li>
+                  <li>
+                    <img
+                      class=""
+                      src="{{ '__head_wing_small.png' | asset_url }}"
+                      alt=""
+                      height="auto"
+                      width="47"
+                      loading="eager"
+                    >
+                  </li>
+                  <li>
+                    <img
+                      class=""
+                      src="{{ '__head_top_small.png' | asset_url }}"
+                      alt=""
+                      height="auto"
+                      width="47"
+                      loading="eager"
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="wrap-footer">
+              <div class="d-grid">
+                <a href="javascript:void(0)" class="next-step btn btn-button btn-secondary btn-lg">
+                  {{ 'product_size.button.start' | t }}
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="2">
+            <h2
+              class="title"
+            >
+              {{ 'product_size.setp02.title' | t }}
+              {% comment %}
+                <span
+                  class="ico-question"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  data-bs-custom-class="custom-tooltip"
+                  data-bs-title="This top tooltip is themed via CSS variables."
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+                  </svg>
+                </span>
+              {% endcomment %}
+            </h2>
+
+            <p class="p-descrip">
+              {{ 'product_size.setp02.description' | t }}
+            </p>
+
+            <div class="content---area">
+              <div class="d-flex justify-content-center">
+                <img
+                  class=""
+                  src="{{ '__head_height.png' | asset_url }}"
+                  alt=""
+                  height="auto"
+                  width="150"
+                  loading="eager"
+                >
+              </div>
+              <div class="d-flex justify-content-center input---area">
+                <label for="height" class="visually-hidden">head height</label>
+                <input
+                  name="properties[{{ 'product_size.setp02.option_name' | t }}]"
+                  class="form-controls input-head-height"
+                  type="number"
+                  id="head-height"
+                  placeholder=""
+                >
+                <span class="span-text">cm</span>
+              </div>
+              <div class="error-message">{{ 'product_size.setp02.use_fewer_filters_html' | t }}</div>
+            </div>
+
+            <div class="wrap-footer">
+              <div class="d-flex justify-content-between">
+                <a href="javascript:void(0)" class="prev-step btn btn-button btn-link btn-lg">
+                  {{- 'product_size.button.prev' | t -}}
+                </a>
+                <a href="javascript:void(0)" class="next-step btn btn-button btn-secondary btn-lg">
+                  {{- 'product_size.button.next' | t -}}
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="3">
+            <h2 class="title">{{ 'product_size.setp03.title' | t }}</h2>
+            <p class="p-descrip">
+              {{ 'product_size.setp03.description' | t }}
+            </p>
+
+            <div class="content---area">
+              <div class="d-flex justify-content-center">
+                <img
+                  class=""
+                  src="{{ '__head_width.png' | asset_url }}"
+                  alt=""
+                  height="auto"
+                  width="150"
+                  loading="eager"
+                >
+              </div>
+              <div class="d-flex justify-content-center input---area">
+                <label for="head-width" class="visually-hidden">머리둘레</label>
+                <input
+                  name="properties[{{ 'product_size.setp03.option_name' | t }}]"
+                  class="form-controls input-head-width"
+                  type="number"
+                  id="head-width"
+                  placeholder=""
+                >
+                <span class="span-text">cm</span>
+              </div>
+              <div class="error-message">{{ 'product_size.setp03.use_fewer_filters_html' | t }}</div>
+            </div>
+
+            <div class="wrap-footer">
+              <div class="d-flex justify-content-between">
+                <a href="javascript:void(0)" class="prev-step btn btn-button btn-link btn-lg">
+                  {{- 'product_size.button.prev' | t -}}
+                </a>
+                <a href="javascript:void(0)" class="next-step btn btn-button btn-secondary btn-lg">
+                  {{- 'product_size.button.next' | t -}}
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="4">
+            <h2 class="title">{{ 'product_size.setp04.title' | t }}</h2>
+            <p class="p-descrip">{{ 'product_size.setp04.description' | t }}</p>
+
+            <div class="content---area">
+              <div class="d-flex justify-content-center">
+                <img
+                  class=""
+                  src="{{ '__head_wing_size.png' | asset_url }}"
+                  alt=""
+                  height="auto"
+                  width="200"
+                  loading="eager"
+                >
+              </div>
+              <div class="radio---area">
+                <ul class="row list-unstyled">
+                  <li class="col-4">
+                    <input
+                      {% comment %} name="properties[head-wing-height]" {% endcomment %}
+                      name="properties[{{  'product_size.setp04.option_name' | t  }}]"
+                      type="radio"
+                      class="btn-check"
+                      id="head-wing-height-01"
+                      autocomplete="off"
+                      value="{{ 'product_size.setp04.option.option01' | t }}"
+                    >
+                    <label class="btn btn-outline-third btn-label" for="head-wing-height-01">
+                      {{- 'product_size.setp04.option.option01' | t -}}
+                    </label>
+                  </li>
+                  <li class="col-4">
+                    <input
+                      name="properties[{{  'product_size.setp04.option_name' | t  }}]"
+                      type="radio"
+                      class="btn-check"
+                      id="head-wing-height-02"
+                      autocomplete="off"
+                      value="{{ 'product_size.setp04.option.option02' | t }}"
+                      checked
+                    >
+                    <label class="btn btn-outline-third btn-label" for="head-wing-height-02">
+                      {{- 'product_size.setp04.option.option02' | t -}}
+                    </label>
+                  </li>
+                  <li class="col-4">
+                    <input
+                      name="properties[{{  'product_size.setp04.option_name' | t  }}]"
+                      type="radio"
+                      class="btn-check"
+                      id="head-wing-height-03"
+                      autocomplete="off"
+                      value="{{ 'product_size.setp04.option.option03' | t }}"
+                    >
+                    <label class="btn btn-outline-third btn-label" for="head-wing-height-03">
+                      {{- 'product_size.setp04.option.option03' | t -}}
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="error-message">이 필드를 입력해주세요.</div>
+            <div class="wrap-footer">
+              <div class="d-flex justify-content-between">
+                <a href="javascript:void(0)" class="prev-step btn btn-button btn-link btn-lg">
+                  {{- 'product_size.button.prev' | t -}}
+                </a>
+                <a href="javascript:void(0)" class="next-step btn btn-button btn-secondary btn-lg">
+                  {{- 'product_size.button.next' | t -}}
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="5">
+            <h2 class="title">{{ 'product_size.setp05.title' | t }}</h2>
+            <p class="p-descrip">
+              {{ 'product_size.setp05.description' | t }}
+            </p>
+
+            <div class="content---area">
+              <div class="d-flex justify-content-center">
+                <img
+                  class=""
+                  src="{{ '__head_top_size.png' | asset_url }}"
+                  alt=""
+                  height="auto"
+                  width="200"
+                  loading="eager"
+                >
+              </div>
+              <div class="radio---area">
+                <ul class="row list-unstyled">
+                  <li class="col-6">
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="properties[{{  'product_size.setp05.option_name' | t  }}]"
+                      id="head-top-height-01"
+                      autocomplete="off"
+                      checked
+                      value="{{ 'product_size.setp05.option.option01' | t }}"
+                    >
+                    <label class="btn btn-outline-third btn-label" for="head-top-height-01">
+                      {{- 'product_size.setp05.option.option01' | t -}}
+                    </label>
+                  </li>
+                  <li class="col-6">
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="properties[{{  'product_size.setp05.option_name' | t  }}]"
+
+                      id="head-top-height-02"
+                      autocomplete="off"
+                      value="{{ 'product_size.setp05.option.option02' | t }}"
+                    >
+                    <label class="btn btn-outline-third btn-label" for="head-top-height-02">
+                      {{- 'product_size.setp05.option.option02' | t -}}
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div class="error-message">이 필드를 입력해주세요.</div>
+            </div>
+
+            <div class="wrap-footer">
+              <div class="d-flex justify-content-between">
+                <a href="javascript:void(0)" class="prev-step btn btn-button btn-link btn-lg">
+                  {{- 'product_size.button.prev' | t -}}
+                </a>
+                <a href="javascript:void(0)" class="next-step btn btn-button btn-secondary btn-lg">
+                  {{- 'product_size.button.next' | t -}}
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="6">
+            <div class="order---area">
+              <h2 class="text-left title">{{ 'product_size.setp06.result' | t }}</h2>
+              <ul id="data-list" class="list-unstyled list---order"></ul>
+            </div>
+            <div class="wrap-footer">
+              <div class="d-flex justify-content-between">
+                <a href="javascript:void(0)" class="prev-step btn btn-button btn-link btn-lg">
+                  {{- 'product_size.button.prev' | t -}}
+                </a>
+                <!-- Add to Cart Button -->
+                <button type="submit" name="add" class="btn btn-lg btn-secondary submit-go">
+                  {{ 'product_size.button.cart' | t }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // script.js
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const nextButtons = document.querySelectorAll('.next-step');
+    const prevButtons = document.querySelectorAll('.prev-step');
+    const progress = document.querySelector('.progress-bar');
+    const formSteps = document.querySelectorAll('.form-step');
+    const dataList = document.getElementById('data-list');
+    const form = document.getElementById(`product-form-{{ product.id }}`);
+    const formControls = document.querySelectorAll('.form-controls');
+    let currentStep = 1;
+    const formData = {};
+
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl));
+
+    nextButtons.forEach((button) => {
+      button.addEventListener('click', handleNextButtonClick);
+    });
+
+    prevButtons.forEach((button) => {
+      button.addEventListener('click', handlePrevButtonClick);
+    });
+
+    form.addEventListener(
+      'keydown',
+      function (event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+        }
+      },
+      true
+    );
+
+    // Prevent Enter key from submitting the form for inputs with class .form-control
+    const formControlInputs = document.querySelectorAll('.form-control');
+    formControlInputs.forEach((input) => {
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+        }
+      });
+    });
+
+    formSteps.forEach((formStep) => {
+      const input = formStep.querySelector('input');
+      if (input) {
+        input.addEventListener('input', handleInputValidation);
+      }
+    });
+
+    function handleNextButtonClick() {
+      const formStep = formSteps[currentStep - 1];
+      const input = formStep.querySelector('input');
+      const errorMessage = formStep.querySelector('.error-message');
+
+      if (!input || validateInput(input, currentStep)) {
+        if (input) {
+          if (input.type === 'radio') {
+            handleRadioInputs(formStep, input);
+          } else {
+            formData[input.id] = input.value;
+            input.classList.remove('input-invalid');
+            input.classList.add('input-valid');
+          }
+        }
+
+        if (errorMessage) {
+          errorMessage.style.display = 'none';
+        }
+
+        currentStep++;
+        if (currentStep === formSteps.length) {
+          displayData();
+        }
+
+        updateFormSteps();
+        updateProgressBar();
+      } else {
+        if (input) {
+          input.classList.remove('input-valid');
+          input.classList.add('input-invalid');
+        }
+
+        if (errorMessage) {
+          errorMessage.style.display = 'block';
+        }
+      }
+    }
+
+    function handlePrevButtonClick() {
+      currentStep--;
+      updateFormSteps();
+      updateProgressBar();
+    }
+
+    function handleInputValidation(event) {
+      const input = event.target;
+      const formStep = input.closest('.form-step');
+      const step = parseInt(formStep.dataset.step, 10);
+      const value = parseInt(input.value, 10);
+      const errorMessage = formStep.querySelector('.error-message');
+
+      // 3자리까지만 입력받게 하기
+      if (input.value.length > 3) {
+        input.value = input.value.slice(0, 3);
+      }
+
+      if (
+        (step === 2 && (isNaN(value) || value < 67 || value > 100)) ||
+        (step === 3 && (isNaN(value) || value < 40 || value > 50))
+      ) {
+        input.style.color = 'rgb(214, 13, 13)';
+        if (errorMessage) {
+          errorMessage.style.display = 'block';
+        }
+      } else {
+        input.style.color = '';
+        if (errorMessage) {
+          errorMessage.style.display = 'none';
+        }
+      }
+    }
+
+    formControls.forEach((input) => {
+      input.addEventListener('input', (e) => {
+        if (input.value.length > 0) {
+          input.classList.add('has-value');
+        } else {
+          input.classList.remove('has-value');
+        }
+      });
+    });
+
+    function validateInput(input, step) {
+      const value = parseInt(input.value, 10);
+      if (step === 2) {
+        return !isNaN(value) && value >= 67 && value <= 100;
+      } else if (step === 3) {
+        return !isNaN(value) && value >= 40 && value <= 50;
+      }
+      return true;
+    }
+
+    function handleRadioInputs(formStep, input) {
+      const radioInputs = formStep.querySelectorAll('input[type="radio"]');
+      radioInputs.forEach((radio) => {
+        if (radio.checked) {
+          formData[input.name] = radio.value;
+        }
+      });
+    }
+
+    function updateFormSteps() {
+      formSteps.forEach((formStep) => {
+        formStep.classList.remove('form-step-active');
+        if (formStep.dataset.step == currentStep) {
+          formStep.classList.add('form-step-active');
+        }
+      });
+    }
+
+    function updateProgressBar() {
+      const progressWidth = ((currentStep - 1) / (formSteps.length - 1)) * 100;
+      progress.style.width = progressWidth + '%';
+    }
+
+    function displayData() {
+      console.log('Displaying data:', formData); // 디버깅용 출력
+      dataList.innerHTML = `
+
+     <li>
+     
+          <span class="ico-img">
+            <img src="{{ '__head_height_small.png' | asset_url }}" alt="" height="auto" width="40" loading="eager">
+          </span>  
+
+
+          <span class="summary-title">{{ 'product_size.setp06.display.text01' | t }}:</span>
+          <span class="summary-data">${formData['head-height'] || ''}</span>
+
+
+          <span class="summary-unit">cm</span>
+        </li>
+        <li>
+          <span class="ico-img">
+            <img src="{{ '__head_width_small.png' | asset_url }}" alt="" height="auto" width="40" loading="eager">
+          </span>
+          <span class="summary-title">{{ 'product_size.setp06.display.text02' | t }}:</span> 
+          <span class="summary-data">${formData['head-width'] || ''}</span> 
+          <span class="summary-unit">cm</span>
+        </li>
+        <li>
+          <span class="ico-img">
+            <img src="{{ '__head_wing_small.png' | asset_url }}" alt="" height="auto" width="47" loading="eager">
+          </span>
+          <span class="summary-title">{{ 'product_size.setp06.display.text03' | t }}:</span>
+          <span class="summary-data">${formData['properties[羽部分硬さ]'] || ''}</span>
+
+          
+        </li>
+        <li>
+          <span class="ico-img">
+            <img src="{{ '__head_top_small.png' | asset_url }}" alt="" height="auto" width="47" loading="eager">
+          </span>
+          <span class="summary-title">{{ 'product_size.setp06.display.text04' | t }}:</span> 
+          <span class="summary-data">${formData['properties[布団厚さ脳天部分]'] || ''}</span>
+        </li>`;
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const activeElement = document.activeElement;
+        if (currentStep === formSteps.length - 1 && activeElement.classList.contains('submit-go')) {
+          form.submit(); // 마지막 단계에서 Enter 키를 눌렀을 때 폼을 제출
+        } else if (activeElement.classList.contains('next-step') || activeElement.classList.contains('prev-step')) {
+          activeElement.click();
+        }
+      }
+    });
+  });
+</script>

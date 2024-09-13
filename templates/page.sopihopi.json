@@ -1,0 +1,295 @@
+{
+  "sections": {
+    "slideshow_kim_swiper_QXLJmJ": {
+      "type": "slideshow-kim-swiper",
+      "blocks": {
+        "slide_NEV8bh": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/fiu_0040_Main_image-4.png",
+            "number": "Think No.001",
+            "heading": "スライドのタイトル",
+            "heading_size": "h1",
+            "subheading": "スライドの説明",
+            "link": "",
+            "button_label": "ボタンのラベル",
+            "image_overlay_product_opacity": 0,
+            "image_overlay_bg": "#FDFFD6",
+            "image_overlay_border": "#000000",
+            "show_single_text_content_01": true,
+            "txt_heading": "商品名",
+            "txt_description": "商品の説明",
+            "box_align": "middle-left",
+            "image_overlay_bg_02": "#FDFFD6",
+            "image_overlay_border_02": "#000000",
+            "image_overlay_product_opacity_02": 0,
+            "show_single_text_content_02": true,
+            "txt_heading_02": "商品名",
+            "txt_description_02": "商品の説明",
+            "box_align_02": "middle-right"
+          }
+        }
+      },
+      "block_order": [
+        "slide_NEV8bh"
+      ],
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "slideshow_P38MDb": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_8wLm8K": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Medium_JPEG-fw24-marathon-pr-head_to_toe_still-people-run_look_2-39__1.jpg",
+            "heading": "秋が来ました。限定100着！お手頃価格で、プレミアムクオリティのフーディージャンパーであなたの秋スタイルを完成させましょう。",
+            "heading_size": "h1",
+            "subheading": "近くのスーパーに行く時も、スポーツやレジャー活動、外出時にも、さっと羽織るだけでスタイルが完成します！",
+            "button_label": "ボタンのラベル",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 30,
+            "color_scheme": "scheme-b9c2636b-9611-4a43-bb4f-5ef97477992a",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_8wLm8K"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "ambient",
+        "show_text_below": true,
+        "accessibility_info": "ブランドについてのスライドショー"
+      }
+    },
+    "main": {
+      "type": "main-sopihopi",
+      "settings": {
+        "logo": "shopify:\/\/shop_images\/find_logo_1200_628.png",
+        "logo_width": 100,
+        "menu": "main-menu"
+      }
+    },
+    "rich_text_fegkrL": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_eNCV3r": {
+          "type": "heading",
+          "settings": {
+            "heading": "ブランドについて説明する",
+            "heading_size": "h1"
+          }
+        },
+        "text_Fe6x4n": {
+          "type": "text",
+          "settings": {
+            "text": "<p>ブランドに関する情報をお客様と共有します。商品を説明したり、告知をしたり、ストアへのお客様を歓迎したりします。<\/p>"
+          }
+        },
+        "button_W94QMn": {
+          "type": "button",
+          "settings": {
+            "button_label": "ボタンのラベル",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_eNCV3r",
+        "text_Fe6x4n",
+        "button_W94QMn"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "image_banner_rPrGYW": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_zNiqVi": {
+          "type": "heading",
+          "settings": {
+            "heading": "画像バナー",
+            "heading_size": "h1"
+          }
+        },
+        "text_cQbArg": {
+          "type": "text",
+          "settings": {
+            "text": "テンプレートのバナー画像またはコンテンツに関する詳細をお客様に提供します。",
+            "text_style": "body"
+          }
+        },
+        "buttons_xqqR6C": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "ボタンのラベル",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "ボタンのラベル",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_zNiqVi",
+        "text_cQbArg",
+        "buttons_xqqR6C"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/FW024_Preview.jpg",
+        "image_2": "shopify:\/\/shop_images\/Metropolis_FW024.jpg",
+        "image_overlay_opacity": 10,
+        "image_height": "medium",
+        "desktop_content_position": "middle-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-3",
+        "image_behavior": "zoom-in",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "featured_product_8CYVxR": {
+      "type": "featured-product",
+      "blocks": {
+        "text_HYDAc9": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_GUtRbp": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_gAJqLc": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker_JnMUYn": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_DzgJny": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons_Rt8X7w": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_9fDpdf": {
+          "type": "share",
+          "settings": {
+            "share_label": "共有"
+          }
+        }
+      },
+      "block_order": [
+        "text_HYDAc9",
+        "title_GUtRbp",
+        "price_gAJqLc",
+        "variant_picker_JnMUYn",
+        "quantity_selector_DzgJny",
+        "buy_buttons_Rt8X7w",
+        "share_9fDpdf"
+      ],
+      "disabled": true,
+      "settings": {
+        "product": "秋用カジュアルフーディー",
+        "color_scheme": "scheme-1",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "17261912095cdf127f": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "featured_collection_rV88Ew": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>関連商品<\/strong>",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "mensouter",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-3",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "slideshow_kim_swiper_QXLJmJ",
+    "slideshow_P38MDb",
+    "main",
+    "rich_text_fegkrL",
+    "image_banner_rPrGYW",
+    "featured_product_8CYVxR",
+    "17261912095cdf127f",
+    "featured_collection_rV88Ew"
+  ]
+}

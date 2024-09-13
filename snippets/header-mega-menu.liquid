@@ -1,0 +1,160 @@
+{% comment %}
+  Renders a megamenu for the header.
+
+  Usage:
+  {% render 'header-mega-menu' %}
+{% endcomment %}
+
+{% style %}
+  .mega-menu[open]:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 64px;
+    z-index: -1;
+
+    background: var(--bs-bg-backdrop-rgba);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+  }
+  .mega-menu-open {
+    backdrop-filter: none !important;
+  }
+{% endstyle %}
+
+<nav class="header__inline-menu">
+  <ul class="list-menu list-menu--inline" role="list">
+    {%- for link in section.settings.menu.links -%}
+      <li>
+        {%- if link.links != blank -%}
+          <header-menu>
+            <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
+              <summary
+                id="HeaderMenu-{{ link.handle }}"
+                class="header__menu-item list-menu__item link focus-inset"
+              >
+                <span
+                  {%- if link.child_active %}
+                    class="header__active-menu-item"
+                  {% endif %}
+                >
+                  {{- link.title | escape -}}
+                </span>
+                {% comment %} {% render 'icon-caret' %} {% endcomment %}
+              </summary>
+              <div
+                id="MegaMenu-Content-{{ forloop.index }}"
+                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
+                tabindex="-1"
+              >
+                <ul
+                  class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
+                  role="list"
+                >
+                  {%- for childlink in link.links -%}
+                    <li>
+                      <a
+                        id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                        href="{{ childlink.url }}"
+                        class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
+                        {% if childlink.current %}
+                          aria-current="page"
+                        {% endif %}
+                      >
+                        {{ childlink.title | escape }}
+                      </a>
+                      {%- if childlink.links != blank -%}
+                        <ul class="list-unstyled" role="list">
+                          {%- for grandchildlink in childlink.links -%}
+                            <li>
+                              <a
+                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                href="{{ grandchildlink.url }}"
+                                class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
+                                {% if grandchildlink.current %}
+                                  aria-current="page"
+                                {% endif %}
+                              >
+                                {{ grandchildlink.title | escape }}
+                              </a>
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                      {%- endif -%}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </div>
+            </details>
+          </header-menu>
+        {%- else -%}
+          <a
+            id="HeaderMenu-{{ link.handle }}"
+            href="{{ link.url }}"
+            class="header__menu-item list-menu__item link link--text focus-inset"
+            {% if link.current %}
+              aria-current="page"
+            {% endif %}
+          >
+            <span
+              {%- if link.current %}
+                class="header__active-menu-item"
+              {% endif %}
+            >
+              {{- link.title | escape -}}
+            </span>
+          </a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const megaMenus = document.querySelectorAll('.mega-menu');
+    const headerWrapper = document.querySelector('.header-wrapper');
+    const product = document.querySelectorAll('.product');
+
+    // 함수: .mega-menu 요소의 상태에 따라 .header-wrapper 클래스를 업데이트
+    const updateHeaderWrapperClass = () => {
+      let isOpen = false;
+      megaMenus.forEach((menu) => {
+        if (menu.hasAttribute('open')) {
+          isOpen = true;
+        }
+      });
+      if (isOpen) {
+        headerWrapper.classList.add('mega-menu-open');
+        document.body.style.position = 'fixed';
+        document.body.style.top = 0;
+        document.body.style.left = 0;
+        document.body.style.right = 0;
+      } else {
+        headerWrapper.classList.remove('mega-menu-open');
+        document.body.style.position = 'static';
+      }
+    };
+
+    // 초기 상태 설정
+    updateHeaderWrapperClass();
+
+    // MutationObserver로 .mega-menu의 상태 변화를 감지
+    const observerConfig = { attributes: true, attributeFilter: ['open'] };
+    megaMenus.forEach((menu) => {
+      const observer = new MutationObserver(updateHeaderWrapperClass);
+      observer.observe(menu, observerConfig);
+    });
+
+    // .mega-menu 요소가 클릭되었을 때 상태를 업데이트
+    megaMenus.forEach((menu) => {
+      menu.addEventListener('click', () => {
+        // 여기서는 기본적으로 details의 open 속성이 토글되므로
+        setTimeout(updateHeaderWrapperClass, 0);
+      });
+    });
+  });
+</script>

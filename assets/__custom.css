@@ -1,0 +1,341 @@
+.page-inner-width {
+  width: 980px;
+  margin: 0 auto;
+}
+.page-wide-width {
+  width: 1024px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 640px) {
+  .page-inner-width {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .page-wide-width {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+}
+
+.prodouct---title {
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.product---text {
+  margin-bottom: 10px !important;
+}
+
+/* ksk */
+.form---control {
+  text-align: center;
+}
+.form---control:focus {
+  text-align: center;
+  outline: 0;
+  box-shadow: none;
+}
+
+.custom---product---page---container {
+  padding: 0 !important;
+  margin: 0 !important;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+}
+.list---product---page {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.list---product---page li {
+  padding: 0 !important;
+}
+.list---product---page li img {
+  margin: 0 !important;
+  border: 0;
+  width: 100%;
+}
+
+/* ksk 상품페이지 타이틀 테이블 스타일*/
+.info---product {
+  color: #fff;
+}
+.title---product {
+  margin-bottom: 15px;
+  margin-top: 5rem !important;
+  padding: 10px 0;
+  font-size: 2rem;
+}
+
+.main---copy---area {
+  padding: 100px 0 0;
+  position: relative;
+  z-index: 100;
+}
+.main---copy {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+.main---descrip {
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+.table-custom-light {
+  width: 100% !important;
+  --bs-table-color: #rgba(34, 34, 34, 0.8);
+  --bs-table-bg: #fafafa;
+  --bs-table-border-color: #f0f0f0;
+  --bs-table-striped-bg: #ecedee;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #dfe0e1;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #e5e6e7;
+  --bs-table-hover-color: #000;
+  color: var(--bs-table-color);
+  border-color: 0;
+}
+.table-custom-light tr td {
+  background: #fff;
+}
+.table-custom-light tr th {
+  width: 200px;
+  font-weight: normal;
+}
+.table-custom-light tr td,
+.table-custom-light tr th {
+  padding-left: 2rem;
+  font-size: 1.4rem;
+}
+
+/**/
+/* .product-tags-thumnail {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  z-index: 10;
+} */
+
+.epr-review-form .form-group input,
+.epr-review-form .form-group textarea {
+  box-shadow: none !important;
+}
+.mag-logo-image {
+  display: none !important;
+}
+.epr-review-form .form-group input,
+.epr-review-form .form-group textarea {
+  border-radius: 5px !important;
+  border: solid 1px #dee2e6 !important;
+}
+
+#mag-product-review .epr-title {
+  text-align: left !important;
+}
+#mag-product-review .epr-wrapper {
+  max-width: 1024px !important;
+  padding: 0 !important;
+}
+#mag-product-review .epr-review .epr-data {
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+.epr-review-form .form-group .form-label {
+  width: 100px !important;
+  font-size: 13px !important;
+}
+#erpReviewFrom .form-group {
+  position: relative !important;
+  display: flex !important;
+}
+.epr-review-form #erpReviewFrom .form-group > div {
+  font-size: 9px !important;
+  position: absolute !important;
+  right: 0 !important;
+  bottom: -13px !important;
+  color: #ccc !important;
+}
+.epr-review-form #erpReviewFrom .form-group .epr-stars {
+  position: static !important;
+}
+#mag-product-review .epr-review .epr-data .epr-review-here {
+  margin: 0 !important;
+}
+
+/* file ---img  card-product.liquid  136-line */
+.product-details {
+  margin-top: 3px;
+}
+.product-details .file---img {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 3px;
+}
+
+@media screen and (max-width: 768px) {
+  .product-details {
+    margin-top: 3px;
+    margin-right: 0;
+  }
+  .product-details .file---img {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 2px;
+  }
+}
+
+/* swiper */
+.related---products {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 20px;
+}
+.mv-swiper .item {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 10px;
+}
+.mv-swiper .item .image-related-size {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 10;
+}
+/* 상품상세설명 */
+.overlay---bg {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+}
+.overlay---bg img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 10;
+  border-radius: 20px;
+}
+/* .overlay---bg:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: calc(1 + var(--z-index-base));
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(
+    to top,
+    rgb(77 136 0 / 23%) 0%,
+    rgb(146 51 51 / 16%) 100%
+  );
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+} */
+
+.wrap--text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+.wrap--text .txt--heading--top-left {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.wrap--text .txt--heading--top-center {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.wrap--text .txt--heading--top-right {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.wrap--text .txt--heading--middle-left {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-start;
+}
+.wrap--text .txt--heading--middle-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrap--text .txt--heading--middle-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.wrap--text .txt--heading--bottom-left {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.wrap--text .txt--heading--bottom-center {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.wrap--text .txt--heading--bottom-right {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.inner--text {
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+}
+.text--content {
+  border-radius: 12px;
+  width: calc(100% - 60%);
+  border-radius: 12px;
+  padding: 10px;
+}
+.title--contnet {
+  font-size: 1.8rem;
+}
+.descrip--content {
+  font-size: 1.3rem;
+  margin-bottom: 0;
+}
+
+.txt--heading p {
+  color: #515151;
+  font-size: 1.5rem;
+}
+.overlay---bg:after {
+  /* content: ""; */
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(1deg, #000000c2, transparent);
+  width: 100%;
+  height: 100px;
+  z-index: 10;
+}

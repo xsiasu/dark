@@ -1,0 +1,205 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "wishlist_Pr7EHh": {
+          "type": "wishlist",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "product_info_8axAiC": {
+          "type": "product_info",
+          "settings": {
+            "heading": "商品情報",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_yUy7Un": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "配送",
+            "icon": "none",
+            "content": "",
+            "page": "china_develivery"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "wishlist_Pr7EHh",
+        "buy_buttons",
+        "share",
+        "product_info_8axAiC",
+        "collapsible_tab_yUy7Un",
+        "description"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": false,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "product-detail": {
+      "type": "product-detail",
+      "blocks": {
+        "single_image_nMG8iU": {
+          "type": "single_image",
+          "settings": {
+            "description_single_image": "shopify:\/\/shop_images\/sku-2.jpg",
+            "image_overlay_bg": "#fdffd6",
+            "image_overlay_border": "#000000",
+            "image_overlay_opacity": 80,
+            "show_single_text_content_01": true,
+            "txt_heading": "ブラウン",
+            "txt_description": "",
+            "box_align": "middle-left"
+          }
+        },
+        "single_image_cwkM63": {
+          "type": "single_image",
+          "settings": {
+            "description_single_image": "shopify:\/\/shop_images\/sku-1.jpg",
+            "image_overlay_bg": "#fdffd6",
+            "image_overlay_border": "#000000",
+            "image_overlay_opacity": 80,
+            "show_single_text_content_01": true,
+            "txt_heading": "黒",
+            "txt_description": "",
+            "box_align": "middle-left"
+          }
+        },
+        "single_image_FptRL3": {
+          "type": "single_image",
+          "settings": {
+            "description_single_image": "shopify:\/\/shop_images\/main-image-4_ca364ee5-80a0-44b4-af29-0e6105c0d21c.jpg",
+            "image_overlay_bg": "#fdffd6",
+            "image_overlay_border": "#000000",
+            "image_overlay_opacity": 80,
+            "show_single_text_content_01": true,
+            "txt_heading": "収納スペース",
+            "txt_description": "",
+            "box_align": "middle-left"
+          }
+        },
+        "single_image_nkfEQb": {
+          "type": "single_image",
+          "settings": {
+            "description_single_image": "shopify:\/\/shop_images\/main-image-3_c2046b58-11e9-45cd-a789-d843ba76e2b0.jpg",
+            "image_overlay_bg": "#fdffd6",
+            "image_overlay_border": "#000000",
+            "image_overlay_opacity": 80,
+            "show_single_text_content_01": false,
+            "txt_heading": "商品名",
+            "txt_description": "商品の説明",
+            "box_align": "middle-left"
+          }
+        }
+      },
+      "block_order": [
+        "single_image_nMG8iU",
+        "single_image_cwkM63",
+        "single_image_FptRL3",
+        "single_image_nkfEQb"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "",
+        "media_size": "large",
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "<strong>関連商品<\/strong>",
+        "heading_size": "h1",
+        "products_to_show": 4,
+        "columns_desktop": 5,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 80,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-detail",
+    "related-products"
+  ]
+}

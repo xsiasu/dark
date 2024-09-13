@@ -1,0 +1,157 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "custom_liquid_MnUM9m": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"table-responsive\">\n  <table class=\"table table-bordered\">\n    <thead class=\"table-light\">\n      <tr class=\"sticky\">\n        <th style=\"width: 50px;\" class=\"sticky fw-normal fs-5 align-middle text-center\">サイズ<\/th>\n        <th style=\"width: 65px;\" class=\"fs-5 fw-normal align-middle text-center\">ウェイスト<\/th>\n        <th style=\"width: 58px;\" class=\"fs-5 fw-normal align-middle text-center\">ヒップ<\/th>\n        <th style=\"width: 50px;\" class=\"fs-6 fw-normal align-middle text-center\">スカート丈<\/th>\n      <\/tr>\n    <\/thead>\n    <tbody>\n      <tr>\n        <td style=\"width: 39px;\" class=\"sticky text-center\">L<\/td>\n        <td style=\"width: 66px;\" class=\"text-center\">70~86<\/td>\n        <td style=\"width: 58px;\" class=\"text-center\">122<\/td>\n        <td style=\"width: 107.703px;\" class=\"text-center\">77<\/td>\n      <\/tr>\n      <tr>\n        <td style=\"width: 39px;\" class=\"sticky text-center\">XL<\/td>\n        <td style=\"width: 66px;\" class=\"text-center\">72~88<\/td>\n        <td style=\"width: 58px;\" class=\"text-center\">124<\/td>\n        <td style=\"width: 107.703px;\" class=\"text-center\">88<\/td>\n      <\/tr>\n    <\/tbody>\n  <\/table>\n<\/div>"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "wishlist_Pr7EHh": {
+          "type": "wishlist",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "product_info_qxPnwY": {
+          "type": "product_info",
+          "settings": {
+            "heading": "商品情報",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_yUy7Un": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "配送",
+            "icon": "none",
+            "content": "",
+            "page": "delivery"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "custom_liquid_MnUM9m",
+        "quantity_selector",
+        "wishlist_Pr7EHh",
+        "buy_buttons",
+        "share",
+        "product_info_qxPnwY",
+        "collapsible_tab_yUy7Un",
+        "description"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": false,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "17210937692851797c": {
+      "type": "apps",
+      "blocks": {
+        "ryviu_reviews_qa_ryviu_widget_kJmKcY": {
+          "type": "shopify:\/\/apps\/ryviu-reviews-qa\/blocks\/ryviu-widget\/807ad6ed-1a6a-4559-abea-ed062858d9da",
+          "settings": {
+            "r_wapper_class": "",
+            "r_max_width": 1920,
+            "r_padding_block": 0,
+            "hide_when_no_reviews": false,
+            "one_col_on_mobile": false,
+            "hide_title_image_form": false
+          }
+        }
+      },
+      "block_order": [
+        "ryviu_reviews_qa_ryviu_widget_kJmKcY"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "<strong>関連商品<\/strong>",
+        "heading_size": "h1",
+        "products_to_show": 4,
+        "columns_desktop": 5,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 80,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "17210937692851797c",
+    "related-products"
+  ]
+}

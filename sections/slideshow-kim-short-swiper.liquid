@@ -1,0 +1,500 @@
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+{{ 'video-section.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .mv-swiper-{{section.id }} {
+    position: relative;
+    overflow: hidden;
+
+  }
+  .mv-swiper-{{section.id }} [class^='swiper-button-']::after {
+    font-size: 30px;
+    color: #fff;
+  }
+  .mv-swiper-{{section.id }} .swiper-pagination-bullet-active {
+    background-color: #fff ;
+  }
+  .mv-swiper-{{section.id }} .swiper-pagination {
+    bottom: 20px !important;
+  }
+  .mv-swiper-{{section.id }} .swiper-slide {
+    width:276px;
+    margin-right:30px
+  }
+  .mv-swiper-{{section.id }} .swiper-button-prev,
+  .mv-swiper-{{section.id }} .swiper-button-next {z-index:1}
+  .mv-swiper-{{section.id }} .swiper-pagination {
+    z-index:1
+    }
+  @media (max-width: 768px) {
+    .mv-swiper-{{section.id }} .swiper-button-prev,
+    .mv-swiper-{{section.id }} .swiper-button-next {display:none}
+  }
+{% endstyle %}
+
+<div class="section-{{ section.id }}-padding section-{{ section.id }}">
+  <!-- Tabs container -->
+  <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
+    {%- if section.settings.title != blank -%}
+      <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {{ section.settings.title }}
+      </h2>
+    {%- endif -%}
+    {%- if section.settings.description != blank
+      or section.settings.show_description
+      and section.settings.collection.description != empty
+    -%}
+      <div class="collection__description {{ section.settings.description_style }} rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {%- if section.settings.show_description -%}
+          {{ section.settings.collection.description }}
+        {%- else -%}
+          {{ section.settings.description -}}
+        {%- endif %}
+      </div>
+    {%- endif -%}
+  </div>
+  <!-- Slider main container -->
+  <div class="mv-swiper-{{ section.id }} page-width">
+    <!-- If we need pagination -->
+
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      {%- for block in section.blocks -%}
+        <div class="swiper-slide">
+          <div
+            class="swiper__slide__content"
+          >
+            <div style="border-radius:10px;overflow:hidden">
+              {%- liquid
+                assign video_id = block.settings.video.id | default: block.settings.video_url.id
+                assign video_alt = block.settings.video.alt | default: block.settings.description
+                assign alt = 'sections.video.load_video' | t: description: video_alt | escape
+                assign poster = block.settings.video.preview_image | default: block.settings.cover_image
+
+                if block.settings.video != null
+                  assign ratio_diff = block.settings.video.aspect_ratio | minus: poster.aspect_ratio | abs
+                  if ratio_diff < 0.01 and ratio_diff > 0
+                    assign fix_ratio = true
+                  endif
+                endif
+              -%}
+
+              <div class="video-section isolate">
+                <deferred-media
+                  class="video-section__media deferred-media gradient global-media-settings{% if block.settings.full_width %} global-media-settings--full-width{% endif %}{% if fix_ratio %} media-fit-cover{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  style="border:0;box-shadow:none;"
+                  data-media-id="{{ video_id }}"
+
+                  {% if poster != null %}
+                    style="--ratio-percent: {{ 1 | divided_by: poster.aspect_ratio | times: 100 }}%;"
+                  {% endif %}
+                >
+                  <button
+                    id="Deferred-Poster-Modal-{{ video_id }}"
+                    class="video-section__poster media deferred-media__poster media--landscape"
+                    type="button"
+                    aria-label="{{ alt }}"
+                  >
+                    {%- if poster != null -%}
+                      {{
+                        poster
+                        | image_url: width: 600
+                        | image_tag: sizes: sizes, widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840', alt: alt
+                      }}
+                    {%- else -%}
+                      {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+                    {%- endif -%}
+                    <span class="deferred-media__poster-button motion-reduce">
+                      {% comment %} {%- render 'icon-play' -%} {% endcomment %}
+                      {% render '__logo_findu_arrow' %}
+                    </span>
+                  </button>
+
+                  <template>
+                    {%- if block.settings.video == null and block.settings.video_url != null -%}
+                      {%- liquid
+                        assign loop = ''
+                        if block.settings.enable_video_looping
+                          assign loop = '&loop=1&playlist=' | append: video_id
+                        endif
+                      -%}
+
+                      {%- if block.settings.video_url.type == 'youtube' -%}
+                        <iframe
+                          id="video-{{ forloop.index }}"
+                          src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1&autoplay=1{{ loop }}&amp;mute=1&amp;controls=1"
+                          class="js-youtube video-iframe"
+                          allow="autoplay; encrypted-media"
+                          allowfullscreen
+                          title="{{ block.settings.description | escape }}"
+                        ></iframe>
+
+                      {%- else -%}
+                        <iframe
+                          src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1{{ loop }}&amp;mute=1&amp;controls=1"
+                          class="js-vimeo"
+                          allow="autoplay; encrypted-media"
+                          allowfullscreen
+                          title="{{ block.settings.description | escape }}"
+                        ></iframe>
+                      {%- endif -%}
+                    {%- else -%}
+                      {{
+                        block.settings.video
+                        | video_tag:
+                          image_size: '1100x',
+                          autoplay: true,
+                          loop: block.settings.enable_video_looping,
+                          controls: true,
+                          muted: true
+                      }}
+                    {%- endif -%}
+                  </template>
+                </deferred-media>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
+            {%- assign placeholder_image = 'product-apparel-' | append: placeholder_image_index -%}
+            {% assign skip_card_product_styles = true %}
+            {% render 'card-product-small',
+              card_product: block.settings.product,
+              media_aspect_ratio: 'adapt',
+              show_secondary_image: block.settings.second_image,
+              extend_height: true,
+              placeholder_image: placeholder_image,
+              skip_styles: skip_card_product_styles
+            %}
+          </div>
+        </div>
+        {% comment %} ksk 0427 {% endcomment %}
+      {%- else -%}
+        {% for i in (1..5) %}
+          {%- assign placeholder_image_carousel = 'hero-apparel-1' -%}
+          {%- assign placeholder_heading = 'タイトル-' | append: forloop.rindex -%}
+          {%- assign placeholder_subheading = 'サブタイトル-' | append: forloop.rindex -%}
+
+          <div class="swiper-slide">
+            <div
+              class="swiper__slide__content"
+            >
+              {{ placeholder_image_carousel | placeholder_svg_tag }}
+
+              <div class="content_box">
+                <h2 class="banner__heading inline-richtext">
+                  {{ placeholder_heading }}
+                </h2>
+
+                <div class="banner__text rte" {{ block.shopify_attributes }}>
+                  <p>{{ placeholder_subheading }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+
+        {% comment %} ksk 0427 {% endcomment %}
+      {% endfor %}
+    </div>
+
+    {% comment %} <div class="swiper-youtube-pagination d-none"></div> {% endcomment %}
+    <!-- If we need navigation buttons -->
+    {% comment %}
+      <div class="swiper-button-prev"><span class="visually-hidden">Prev</span></div>
+      <div class="swiper-button-next"><span class="visually-hidden">Next</span></div>
+    {% endcomment %}
+
+    <!-- If we need scrollbar -->
+    {% comment %} <div class="swiper-scrollbar"></div> {% endcomment %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "slideshow-kim-short",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "t:sections.featured-collection.settings.title.default",
+      "label": "t:sections.featured-collection.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "t:sections.featured-collection.settings.description.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "t:sections.featured-collection.settings.show_description.label",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "t:sections.slideshow.blocks.slide.name",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "range",
+          "id": "image_overlay_opacity",
+          "min": 0,
+          "max": 100,
+          "step": 10,
+          "unit": "%",
+          "label": "t:sections.slideshow.blocks.slide.settings.image_overlay_opacity.label",
+          "default": 0
+        },
+        {
+          "type": "inline_richtext",
+          "id": "video_heading",
+          "default": "t:sections.video.settings.heading.default",
+          "label": "t:sections.video.settings.heading.label"
+        },
+        {
+          "type": "select",
+          "id": "video_heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h0",
+              "label": "t:sections.all.heading_size.options__3.label"
+            },
+            {
+              "value": "hxl",
+              "label": "t:sections.all.heading_size.options__4.label"
+            },
+            {
+              "value": "hxxl",
+              "label": "t:sections.all.heading_size.options__5.label"
+            }
+          ],
+          "default": "h1",
+          "label": "t:sections.all.heading_size.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_video_looping",
+          "label": "t:sections.video.settings.enable_video_looping.label",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "t:sections.video.settings.header__1.content"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "t:sections.video.settings.video.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.video.settings.header__2.content"
+        },
+        {
+          "type": "paragraph",
+          "content": "t:sections.video.settings.paragraph.content"
+        },
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "accept": ["youtube", "vimeo"],
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+          "label": "t:sections.video.settings.video_url.label",
+          "info": "t:sections.video.settings.video_url.info"
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "t:sections.video.settings.cover_image.label"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "t:sections.video.settings.description.label",
+          "info": "t:sections.video.settings.description.info"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.video.settings.header__3.content"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "slideshow-kim-short",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    console.log(typeof Swiper); // Swiper 객체가 정의되었는지 확인
+    if (typeof Swiper !== 'undefined') {
+      var swiper = new Swiper('.mv-swiper-{{ section.id }}', {
+        slidesPerView: 2.3,
+        spaceBetween: 10,
+        breakpoints: {
+           // when window width is >= 640px
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+           // when window width is >= 768px
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
+           // when window width is >= 1024px
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 30,
+          },
+        },
+        freeMode: true,
+        pagination: {
+            el: ".swiper-youtube-pagination",
+            clickable: true,
+          },
+          {% comment %} touchRatio: 0, {% endcomment %}
+        {% comment %} autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        }, {% endcomment %}
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+
+
+     // 탭 버튼 클릭 이벤트
+     var tabs = document.querySelectorAll('.tab');
+     tabs.forEach(function(tab, index) {
+         tab.addEventListener('click', function() {
+         swiper.slideTo(index);
+         });
+     });
+
+     function stopAllVideos() {
+        var iframes = document.querySelectorAll('.video-iframe');
+        iframes.forEach(function(iframe) {
+          var src = iframe.src;
+          iframe.src = src; // iframe의 src를 재설정하여 동영상을 정지시킴
+        });
+      }
+
+     // 슬라이드 변경 시 탭 버튼 업데이트
+     swiper.on('slideChange', function() {
+         stopAllVideos(); // 모든 동영상 정지
+         tabs.forEach(function(tab) {
+         tab.classList.remove('active');
+         });
+         tabs[swiper.activeIndex].classList.add('active');
+     });
+    } else {
+      console.error('Swiper is not defined');
+    }
+
+
+
+
+
+  });
+</script>

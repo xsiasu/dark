@@ -1,0 +1,93 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+
+  {% if template.name == 'page' and
+     page.handle == 'refund-policy' or
+     page.handle == 'shopping-guide' or
+     page.handle == 'terms-condition' %}
+
+      .page---default {
+        /* 여기에 반환 정책 페이지에 적용할 CSS를 추가합니다 */
+
+
+      }
+      .list-policy {
+        padding-left:0 !important
+      }
+      .list-inner-policy {
+        padding-left:10px !important
+      }
+      .tit-policy {
+        font-size:1.3rem;font-weight:bold;
+      }
+
+  {% endif %}
+
+  .page---default---title {font-size:2.5rem}
+  .page---default {font-size:1.3rem}
+{%- endstyle -%}
+
+<div class="collection-hero">
+  <div class="collection-hero__inner page-inner-width">
+    <div class="collection-hero__text-wrapper">
+      <h1 class="collection-hero__title{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        {{ page.title | escape }}
+      </h1>
+    </div>
+  </div>
+</div>
+
+<div class="page-width page-width--narrow section-{{ section.id }}-padding">
+  <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <div class="page---default">
+      {{ page.content }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-page.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

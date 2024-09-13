@@ -1,0 +1,678 @@
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .mv-swiper---{{section.id }} {
+    position: relative;
+    overflow: hidden;
+  }
+  .mv-swiper---{{section.id }} [class^='swiper-button-']::after {
+    font-size: 30px;
+    color: #fff;
+  }
+  .mv-swiper---{{section.id }} .swiper-pagination-bullet-active {
+    background-color: #fff ;
+  }
+  .mv-swiper---{{section.id }} .swiper-pagination {
+    bottom: 20px !important;
+  }
+  .mv-swiper---{{section.id }} .slide-img img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mv-swiper---{{section.id }} .wrap-content_box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+  }
+  .mv-swiper---{{section.id }} .wrap-content_box .content_box {
+    position: absolute;
+    top: 50%;
+    transform: translate(10px, calc(-50% - 10px));
+  }
+  .mv-swiper---{{section.id }} .swiper__slide__content {
+    box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+    border-radius: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    height: var(--slide-height);
+    position: relative;
+    overflow: hidden;
+  }
+  .mv-swiper---{{section.id }} .swiper__slide__content:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: calc(1 + var(--z-index-base));
+    pointer-events: none;
+    content: '';
+    background: linear-gradient(to top, rgb(77 136 0 / 23%) 0%, rgb(146 51 51 / 16%) 100%);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+  }
+  .mv-swiper---{{section.id }} .image-s-size {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 10;
+  }
+  .mv-swiper---{{section.id }} .content_box {
+    position: relative;
+    width: 100%;
+    color:var(--bs-body-color);color: #434040;
+    padding: 0;
+    z-index: 100;
+  }
+  .mv-swiper---{{section.id }} .banner__number {
+    font-size: 1.5rem;
+  }
+  .mv-swiper---{{section.id }} .banner__heading {
+    font-size: 4.3rem;
+    color:var(--bs-body-color);
+  }
+  .mv-swiper---{{section.id }} .banner__text {
+    color:var(--bs-body-color);
+  }
+  .mv-swiper---{{section.id }} .banner__buttons {
+    margin-top:1rem
+  }
+  .mv-swiper---{{section.id }} .banner__buttons > p{
+    font-size: 1.4rem;
+
+  }
+  .mv-swiper---{{section.id }} .swiper-button-prev,
+  .mv-swiper---{{section.id }} .swiper-button-next {z-index:1}
+  .mv-swiper---{{section.id }} .swiper-pagination {
+    z-index:1
+    }
+
+  .mv-swiper---{{section.id }} .autoplay-progress {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      z-index: 10;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: var(--swiper-theme-color);
+    }
+
+    .mv-swiper---{{section.id }} .autoplay-progress svg {
+      --progress: 0;
+      position: absolute;
+      left: 0;
+      top: 0px;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      stroke-width: 4px;
+      stroke: var(--swiper-theme-color);
+      fill: none;
+      stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+      stroke-dasharray: 125.6;
+      transform: rotate(-90deg);
+    }
+  @media (max-width: 768px) {
+    .mv-swiper---{{section.id }} {
+      --slide-height: auto;
+    }
+    .mv-swiper---{{section.id }} .wrap-content_box {
+      position: static;
+    }
+    .mv-swiper---{{section.id }} .wrap-content_box .content_box {
+      width: 100%;
+      position: absolute;
+      top: initial;
+      bottom: 0;
+      transform: none;
+    }
+    .mv-swiper---{{section.id }} .content_box {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      box-sizing: border-box;
+      width: 100%;
+      color:var(--bs-body-color);
+      padding: 10px;
+      background: linear-gradient(1deg, black, transparent);
+      z-index: 10000;
+    }
+    .mv-swiper---{{section.id }} .banner__heading {
+      font-size: 1.5rem;
+      color:var(--bs-body-color);
+    }
+    .mv-swiper---{{section.id }} .banner__text {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .mv-swiper---{{section.id }} .banner__text p a {
+      color:var(--bs-body-color);
+    }
+    .mv-swiper---{{section.id }} .swiper-pagination {
+      position:static
+    }
+    .mv-swiper---{{section.id }} .swiper-pagination-bullet-active {
+      background-color:  var(--bs-blue);
+    }
+    .mv-swiper---{{section.id }} .swiper-button-prev,
+    .mv-swiper---{{section.id }} .swiper-button-next {display:none}
+  }
+
+  .section-{{ section.id }} .wrap--text .txt--heading--top-left{
+    position: relative;
+    top: 10%;
+    left:-20%;
+  }
+  .section-{{ section.id }} .wrap--text .txt--heading--top-right{
+    position: relative;
+    top: 10%;
+    right:-10%;
+  }
+  .section-{{ section.id }} .wrap--text .txt--heading--middle-left {
+    position: relative;
+    left:-20%;
+  }
+  @media (max-width: 768px) {
+    .section-{{ section.id }} .wrap--text .txt--heading--top-left{
+      position: relative;
+      top: 10%;
+      left:10px;
+    }
+    .section-{{ section.id }} .text--content {
+      width: 26%;
+    }
+    .section-{{ section.id }} .wrap--text .txt--heading--middle-left {
+      position: relative;
+      left:10px;
+    }
+    .section-{{ section.id }} .wrap--text .txt--heading--top-right{
+      position: relative;
+      top: 10%;
+      right:10px;
+    }
+    .section-{{ section.id }} .banner__text {height:32px;overflow:hidden}
+    .section-{{ section.id }} .text--content {padding:4px}
+    .section-{{ section.id }} .title--content {font-size:1.2rem;}
+    .section-{{ section.id }} .descrip--content {font-size:1rem}
+  }
+{% endstyle %}
+
+<div class="page-width section-{{ section.id }}-padding section-{{ section.id }}">
+  <!-- Slider main container -->
+  <div class="mv-swiper---{{ section.id }}">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      {%- for block in section.blocks -%}
+        <div class="swiper-slide">
+          <div
+            class="swiper__slide__content"
+            {%- if block.settings.image != blank -%}
+              style="background-image:url('{{ block.settings.image | image_url: width: 2000  }}');background-repeat:no-repeat;background-size:cover;"
+            {% endif %}
+          >
+            <div class="row">
+              <div class="col-12">
+                <div class="wrap-content_box">
+                  <div class="content_box">
+                    {%- if block.settings.number != blank -%}
+                      <h2 class="banner__number">
+                        {{ block.settings.number }}
+                      </h2>
+                    {%- endif -%}
+                    {%- if block.settings.heading != blank -%}
+                      <h2 class="banner__heading fw-bold">
+                        {{ block.settings.heading }}
+                      </h2>
+                    {%- endif -%}
+                    {%- if block.settings.subheading != blank -%}
+                      <div class="banner__text rte" {{ block.shopify_attributes }}>
+                        <p>{{ block.settings.subheading }}</p>
+                      </div>
+                    {%- endif -%}
+                    {%- if block.settings.button_label != blank -%}
+                      <div class="banner__buttons">
+                        <a
+                          {% if block.settings.link %}
+                            href="{{ block.settings.link }}"
+                          {% else %}
+                            role="link" aria-disabled="true"
+                          {% endif %}
+                        >
+                          <p class="text-primary">
+                            {{- block.settings.button_label | escape -}}
+                          </p>
+                        </a>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-12 position-relative"
+                style="background-image:url('{{ block.settings.image | image_url: width: 2000  }}');background-repeat:no-repeat;background-size:cover;"
+              >
+                {%- if block.settings.image != blank -%}
+                  {{ block.settings.image | image_url: width: 500 | image_tag: class: 'image-s-size' }}
+                  <div class="wrap--text {% if block.settings.show_single_text_content_01 %} d-block {% else %} d-none{% endif %}">
+                    <div
+                      class="inner--text txt--heading--{{ block.settings.box_align }}"
+                    >
+                      <div
+                        class="text--content"
+                        style="
+                          background-color: {{ block.settings.image_overlay_bg }};
+                          opacity: {{ block.settings.image_overlay_product_opacity | divided_by: 100.0 }};
+                          border:solid .1rem {{ block.settings.image_overlay_border }}
+                        "
+                      >
+                        <h2 class="title--content fw-bold">{{ block.settings.txt_heading }}</h2>
+                        <p class="descrip--content">{{ block.settings.txt_description }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% comment %} ksk {% endcomment %}
+                  <div class="wrap--text {% if block.settings.show_single_text_content_02 %} d-block {% else %} d-none{% endif %}">
+                    <div
+                      class="inner--text txt--heading--{{ block.settings.box_align_02 }}"
+                    >
+                      <div
+                        class="text--content"
+                        style="
+                          background-color: {{ block.settings.image_overlay_bg_02 }};
+                          opacity: {{ block.settings.image_overlay_product_opacity_02 | divided_by: 100.0 }};
+                          border:solid .1rem {{ block.settings.image_overlay_border_02 }}
+                        "
+                      >
+                        <h2 class="title--content fw-bold">{{ block.settings.txt_heading_02 }}</h2>
+                        <p class="descrip--content">{{ block.settings.txt_description_02 }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {% comment %} ksk {% endcomment %}
+                {%- else -%}
+                  {%- capture placeholder -%}{% cycle 'hero-apparel-1', 'hero-apparel-2','hero-apparel-3' %}{%- endcapture -%}
+                  {{ placeholder | placeholder_svg_tag: 'Slideshow__Image PlaceholderBackground__Svg' }}
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% comment %} ksk 0427 {% endcomment %}
+      {%- else -%}
+        {% for i in (1..5) %}
+          {%- assign placeholder_image_carousel = 'hero-apparel-1' -%}
+          {%- assign placeholder_heading = 'タイトル-' | append: forloop.rindex -%}
+          {%- assign placeholder_subheading = 'サブタイトル-' | append: forloop.rindex -%}
+
+          <div class="swiper-slide">
+            <div
+              class="swiper__slide__content"
+            >
+              {{ placeholder_image_carousel | placeholder_svg_tag }}
+
+              <div class="content_box">
+                <h2 class="banner__heading inline-richtext">
+                  {{ placeholder_heading }}
+                </h2>
+
+                <div class="banner__text rte" {{ block.shopify_attributes }}>
+                  <p>{{ placeholder_subheading }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+
+        {% comment %} ksk 0427 {% endcomment %}
+      {% endfor %}
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"><span class="visually-hidden">Prev</span></div>
+    <div class="swiper-button-next"><span class="visually-hidden">Next</span></div>
+    <div class="autoplay-progress">
+      <svg viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="20"></circle>
+      </svg>
+      <span></span>
+    </div>
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "slideshow-kim-per-swiper",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "t:sections.slideshow.blocks.slide.name",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "image"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "number",
+          "default": "Think No.001",
+          "label": "t:sections.slideshow.blocks.slide.settings.heading.label"
+        },
+        {
+          "type": "html",
+          "id": "heading",
+          "default": "スライドのタイトル",
+          "info": "hml tag",
+          "label": "t:sections.slideshow.blocks.slide.settings.heading.label"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h0",
+              "label": "t:sections.all.heading_size.options__3.label"
+            }
+          ],
+          "default": "h1",
+          "label": "t:sections.all.heading_size.label"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "subheading",
+          "default": "スライドの説明",
+          "label": "t:sections.slideshow.blocks.slide.settings.subheading.label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.slideshow.blocks.slide.settings.link.label"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "t:sections.slideshow.blocks.slide.settings.button_label.default",
+          "label": "t:sections.slideshow.blocks.slide.settings.button_label.label",
+          "info": "t:sections.slideshow.blocks.slide.settings.button_label.info"
+        },
+        {
+          "type": "range",
+          "id": "image_overlay_product_opacity",
+          "min": 0,
+          "max": 100,
+          "step": 10,
+          "unit": "%",
+          "label": "image_overlay_product_opacity",
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "t:sections.slideshow.settings.mobile.content"
+        },
+        {
+          "type": "color",
+          "id": "image_overlay_bg",
+          "label": "image_overlay_bg",
+          "default": "#FDFFD6"
+        },
+        {
+          "type": "color",
+          "id": "image_overlay_border",
+          "label": "image_overlay_border",
+          "default": "#000000"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_single_text_content_01",
+          "label": "show_single_text_content_01",
+          "default": true
+        },
+        {
+          "type": "inline_richtext",
+          "id": "txt_heading",
+          "default": "商品名",
+          "label": "product description"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "txt_description",
+          "default": "商品の説明",
+          "label": "product description"
+        },
+        {
+          "type": "select",
+          "id": "box_align",
+          "options": [
+            {
+              "value": "top-left",
+              "label": "top-left"
+            },
+            {
+              "value": "top-center",
+              "label": "top-center"
+            },
+            {
+              "value": "top-right",
+              "label": "top-right"
+            },
+            {
+              "value": "middle-left",
+              "label": "middle-left"
+            },
+            {
+              "value": "middle-center",
+              "label": "middle-center"
+            },
+            {
+              "value": "middle-right",
+              "label": "middle-right"
+            },
+            {
+              "value": "bottom-left",
+              "label": "bottom-left"
+            },
+            {
+              "value": "bottom-center",
+              "label": "bottom-center"
+            },
+            {
+              "value": "bottom-right",
+              "label": "bottom-right"
+            }
+          ],
+          "default": "middle-left",
+          "label": "box align",
+          "info": "box align"
+        },
+
+        {
+          "type": "color",
+          "id": "image_overlay_bg_02",
+          "label": "image_overlay_bg",
+          "default": "#FDFFD6"
+        },
+        {
+          "type": "color",
+          "id": "image_overlay_border_02",
+          "label": "image_overlay_border",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "image_overlay_product_opacity_02",
+          "min": 0,
+          "max": 100,
+          "step": 10,
+          "unit": "%",
+          "label": "image_overlay_product_opacity_02",
+          "default": 0
+        },
+        {
+          "type": "checkbox",
+          "id": "show_single_text_content_02",
+          "label": "show_single_text_content_02",
+          "default": true
+        },
+        {
+          "type": "inline_richtext",
+          "id": "txt_heading_02",
+          "default": "商品名",
+          "label": "product description"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "txt_description_02",
+          "default": "商品の説明",
+          "label": "product description"
+        },
+        {
+          "type": "select",
+          "id": "box_align_02",
+          "options": [
+            {
+              "value": "top-left",
+              "label": "top-left"
+            },
+            {
+              "value": "top-center",
+              "label": "top-center"
+            },
+            {
+              "value": "top-right",
+              "label": "top-right"
+            },
+            {
+              "value": "middle-left",
+              "label": "middle-left"
+            },
+            {
+              "value": "middle-center",
+              "label": "middle-center"
+            },
+            {
+              "value": "middle-right",
+              "label": "middle-right"
+            },
+            {
+              "value": "bottom-left",
+              "label": "bottom-left"
+            },
+            {
+              "value": "bottom-center",
+              "label": "bottom-center"
+            },
+            {
+              "value": "bottom-right",
+              "label": "bottom-right"
+            }
+          ],
+          "default": "middle-right",
+          "label": "box align",
+          "info": "box align"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "slideshow-kim-per-swiper",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    console.log(typeof Swiper); // Swiper 객체가 정의되었는지 확인
+    if (typeof Swiper !== 'undefined') {
+      var swiper = new Swiper('.mv-swiper---{{ section.id }}', {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        slidesPerView: 3,
+        spaceBetween: 30,
+        // autoplay: {
+        //   delay: 5000,
+        //   disableOnInteraction: false,
+        // },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    } else {
+      console.error('Swiper is not defined');
+    }
+  });
+</script>

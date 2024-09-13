@@ -1,0 +1,199 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "wishlist_Pr7EHh": {
+          "type": "wishlist",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "product_info_TkWa8g": {
+          "type": "product_info",
+          "settings": {
+            "heading": "商品情報",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_yUy7Un": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "配送",
+            "icon": "none",
+            "content": "",
+            "page": "delivery"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "wishlist_Pr7EHh",
+        "buy_buttons",
+        "share",
+        "product_info_TkWa8g",
+        "collapsible_tab_yUy7Un",
+        "description"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": false,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "product-detail": {
+      "type": "product-detail",
+      "blocks": {
+        "single_image_dwMQkh": {
+          "type": "single_image",
+          "settings": {
+            "description_single_image": "shopify:\/\/shop_images\/JIJI0455.png",
+            "image_overlay_bg": "#FDFFD6",
+            "image_overlay_border": "#f3f3f3",
+            "image_overlay_opacity": 90,
+            "show_single_text_content_01": true,
+            "txt_heading": "か弱い赤ちゃんの肌を守ってください。",
+            "txt_description": "",
+            "box_align": "top-left"
+          }
+        },
+        "single_image_b7kePi": {
+          "type": "single_image",
+          "settings": {
+            "description_single_image": "shopify:\/\/shop_images\/JIJI0465.png",
+            "image_overlay_bg": "#FDFFD6",
+            "image_overlay_border": "#000000",
+            "image_overlay_opacity": 80,
+            "show_single_text_content_01": true,
+            "txt_heading": "サイズ調節が可能です。",
+            "txt_description": "",
+            "box_align": "middle-left"
+          }
+        },
+        "couple_image_kjjy9E": {
+          "type": "couple_image",
+          "settings": {
+            "description_couple_image_01": "shopify:\/\/shop_images\/JIJI0465.png",
+            "image_overlay_bg_couple_image_01": "#FDFFD6",
+            "image_overlay_border_image_01": "#000000",
+            "show_text_content_01": false,
+            "image_overlay_opacity_image_01": 80,
+            "txt_heading_01": "商品名",
+            "txt_description_01": "商品の説明",
+            "box_align_couple_01": "middle-left",
+            "description_couple_image_02": "shopify:\/\/shop_images\/JIJI0455.png",
+            "image_overlay_bg_couple_image_02": "#FDFFD6",
+            "image_overlay_border_image_02": "#000000",
+            "show_text_content_02": false,
+            "image_overlay_opacity_image_02": 80,
+            "txt_heading_02": "商品名",
+            "txt_description_02": "商品の説明",
+            "box_align_couple_02": "middle-left"
+          }
+        }
+      },
+      "block_order": [
+        "single_image_dwMQkh",
+        "single_image_b7kePi",
+        "couple_image_kjjy9E"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "",
+        "media_size": "large",
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "<strong>関連商品<\/strong>",
+        "heading_size": "h1",
+        "products_to_show": 4,
+        "columns_desktop": 5,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 80,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-detail",
+    "related-products"
+  ]
+}

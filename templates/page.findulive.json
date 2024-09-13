@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-findulive",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

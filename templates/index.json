@@ -1,0 +1,415 @@
+{
+  "sections": {
+    "slideshow_kim_swiper_B7rhQh": {
+      "type": "slideshow-kim-swiper",
+      "blocks": {
+        "slide_4NKHtG": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/fiu_0040_Main_image-2.png",
+            "number": "",
+            "heading": "この秋のイチオシ、フーディージャンパー",
+            "heading_size": "h1",
+            "subheading": "この秋、スタイルと快適さを兼ね備えたフーディージャンパーで、おしゃれ度をアップさせましょう。暖かさはもちろん、洗練されたデザインで秋のファッションを完成させてください。”",
+            "link": "shopify:\/\/products\/秋用カジュアルフーディー",
+            "button_label": "商品を見る",
+            "image_overlay_product_opacity": 50,
+            "image_overlay_bg": "#ffffff",
+            "image_overlay_border": "#c7c7c7",
+            "show_single_text_content_01": true,
+            "txt_heading": "プレミアムクオリティ",
+            "txt_description": "findUで強くおすすめします。",
+            "box_align": "middle-left",
+            "image_overlay_bg_02": "#f5f9a6",
+            "image_overlay_border_02": "#c7c7c7",
+            "image_overlay_product_opacity_02": 70,
+            "show_single_text_content_02": true,
+            "txt_heading_02": "2カーラ",
+            "txt_description_02": "ダークグレー、アーミーグリーン",
+            "box_align_02": "top-right"
+          }
+        },
+        "slide_XpV8pH": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/fiu_0042_Overview-7.png",
+            "number": "",
+            "heading": "秋の快適さを感じるカジュアルルーズフィットロングスリーブ",
+            "heading_size": "h1",
+            "subheading": "<strong>秋風を感じながら、快適でスタイリッシュに！ルーズフィットとラウンドネックで、カジュアルな秋の装いにぴったりです。<\/strong>",
+            "link": "shopify:\/\/products\/秋の快適さを感じるカジュアルルーズフィットロングスリーブ",
+            "button_label": "商品を見る",
+            "image_overlay_product_opacity": 60,
+            "image_overlay_bg": "#fdffd6",
+            "image_overlay_border": "#000000",
+            "show_single_text_content_01": true,
+            "txt_heading": "ルーズフィット",
+            "txt_description": "ゆったりとしたフィットのロングスリーブ、とても快適です。",
+            "box_align": "middle-left",
+            "image_overlay_bg_02": "#fdffd6",
+            "image_overlay_border_02": "#000000",
+            "image_overlay_product_opacity_02": 70,
+            "show_single_text_content_02": true,
+            "txt_heading_02": "4カーラ",
+            "txt_description_02": " ブラック、カーキ、 ブラウン、グレー",
+            "box_align_02": "middle-right"
+          }
+        },
+        "slide_wjebRF": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/fiu_0032_black-02_db64eed8-6200-47fa-960b-6044cb6b1e2d.png",
+            "number": "Think No.001",
+            "heading": "男性が彼女に買ってあげたい。",
+            "heading_size": "h1",
+            "subheading": "",
+            "link": "shopify:\/\/products\/fiu_0032",
+            "button_label": "商品を見る",
+            "image_overlay_product_opacity": 0,
+            "image_overlay_bg": "#fdffd6",
+            "image_overlay_border": "#000000",
+            "show_single_text_content_01": true,
+            "txt_heading": "商品名",
+            "txt_description": "商品の説明",
+            "box_align": "middle-left",
+            "image_overlay_bg_02": "#fdffd6",
+            "image_overlay_border_02": "#000000",
+            "image_overlay_product_opacity_02": 0,
+            "show_single_text_content_02": true,
+            "txt_heading_02": "商品名",
+            "txt_description_02": "商品の説明",
+            "box_align_02": "top-right"
+          }
+        },
+        "slide_DGQfXJ": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Designer_7.jpg",
+            "number": "",
+            "heading": "35代~40代の広場",
+            "heading_size": "h1",
+            "subheading": "30代~40代の\b広場を作ります。",
+            "link": "",
+            "button_label": "",
+            "image_overlay_product_opacity": 0,
+            "image_overlay_bg": "#fdffd6",
+            "image_overlay_border": "#000000",
+            "show_single_text_content_01": true,
+            "txt_heading": "商品名",
+            "txt_description": "商品の説明",
+            "box_align": "middle-left",
+            "image_overlay_bg_02": "#fdffd6",
+            "image_overlay_border_02": "#000000",
+            "image_overlay_product_opacity_02": 0,
+            "show_single_text_content_02": true,
+            "txt_heading_02": "商品名",
+            "txt_description_02": "商品の説明",
+            "box_align_02": "middle-right"
+          }
+        },
+        "slide_A3di8B": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/over-7.png",
+            "number": "Think No.00",
+            "heading": "イギリススタイルのショルダーバッグ",
+            "heading_size": "h1",
+            "subheading": "イギリススタイルのショルダーバッグ",
+            "link": "shopify:\/\/products\/新しいカスタム旅行必需品メッセンジャーバッグメンズワンショルダーブリーフケース調節可能なストラップクロスボディバッグ",
+            "button_label": "商品を見る",
+            "image_overlay_product_opacity": 0,
+            "image_overlay_bg": "#fdffd6",
+            "image_overlay_border": "#000000",
+            "show_single_text_content_01": true,
+            "txt_heading": "商品名",
+            "txt_description": "商品の説明",
+            "box_align": "middle-left",
+            "image_overlay_bg_02": "#fdffd6",
+            "image_overlay_border_02": "#000000",
+            "image_overlay_product_opacity_02": 0,
+            "show_single_text_content_02": true,
+            "txt_heading_02": "商品名",
+            "txt_description_02": "商品の説明",
+            "box_align_02": "middle-right"
+          }
+        },
+        "slide_TehV7p": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/23---171369353600201487_2024-07-28T00_30_51.012Z_823723d4-f8ca-4785-a634-0fa0d4e36a9f.png",
+            "number": "Think No.001",
+            "heading": "アメリカンスタイル",
+            "heading_size": "h1",
+            "subheading": "アメリカンスタイル",
+            "link": "shopify:\/\/products\/usa-t-shirts-pants-set",
+            "button_label": "商品を見る",
+            "image_overlay_product_opacity": 0,
+            "image_overlay_bg": "#fdffd6",
+            "image_overlay_border": "#000000",
+            "show_single_text_content_01": true,
+            "txt_heading": "商品名",
+            "txt_description": "商品の説明",
+            "box_align": "middle-left",
+            "image_overlay_bg_02": "#fdffd6",
+            "image_overlay_border_02": "#000000",
+            "image_overlay_product_opacity_02": 0,
+            "show_single_text_content_02": true,
+            "txt_heading_02": "商品名",
+            "txt_description_02": "商品の説明",
+            "box_align_02": "middle-right"
+          }
+        }
+      },
+      "block_order": [
+        "slide_4NKHtG",
+        "slide_XpV8pH",
+        "slide_wjebRF",
+        "slide_DGQfXJ",
+        "slide_A3di8B",
+        "slide_TehV7p"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "slideshow_kim_short_swiper_CHCBcJ": {
+      "type": "slideshow-kim-short-swiper",
+      "blocks": {
+        "slide_wTkAtF": {
+          "type": "slide",
+          "settings": {
+            "image_overlay_opacity": 0,
+            "video_heading": "動画",
+            "video_heading_size": "h1",
+            "enable_video_looping": false,
+            "video": "shopify:\/\/files\/videos\/fiu_0043_vidio-1_ddeea97c-e447-4fb4-8e42-a9d84fb35231.mp4",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "description": "",
+            "product": "fiu_0043"
+          }
+        },
+        "slide_eCgRzM": {
+          "type": "slide",
+          "settings": {
+            "image_overlay_opacity": 0,
+            "video_heading": "動画",
+            "video_heading_size": "h1",
+            "enable_video_looping": false,
+            "video": "shopify:\/\/files\/videos\/fiu_0042_video-1.mp4",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "description": "",
+            "product": "秋の快適さを感じるカジュアルルーズフィットロングスリーブ"
+          }
+        },
+        "slide_mKEfCR": {
+          "type": "slide",
+          "settings": {
+            "image_overlay_opacity": 0,
+            "video_heading": "動画",
+            "video_heading_size": "h1",
+            "enable_video_looping": false,
+            "video": "shopify:\/\/files\/videos\/fiu_0046_Video-1.mp4",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "description": "",
+            "product": "秋メンズ-コーデュロイカジュアルミッドウエストパンツ"
+          }
+        }
+      },
+      "block_order": [
+        "slide_wTkAtF",
+        "slide_eCgRzM",
+        "slide_mKEfCR"
+      ],
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "title": "<strong>ショートの商品紹介<\/strong>",
+        "heading_size": "h2",
+        "description": "<p>動画で商品について詳しくご覧ください<\/p>",
+        "show_description": false
+      }
+    },
+    "featured_collection_TwYege": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>レディース<\/strong>",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "ladies",
+        "products_to_show": 6,
+        "columns_desktop": 6,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_NR8nbx": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>おすすめ<\/strong>",
+        "heading_size": "h1",
+        "description": "<h4>この秋、findUで強くおすすめします。<\/h4>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "popularitems",
+        "products_to_show": 6,
+        "columns_desktop": 6,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_Pgq3iH": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>メンズトップス<\/strong>",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "menstops",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_MYEkpn": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>メンズボトムス<\/strong>",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "mensbottoms",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_Cke6rK": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>バッグ<\/strong>",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "bags",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_YDHhzm": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>帽子<\/strong>",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "caps",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "slideshow_kim_swiper_B7rhQh",
+    "slideshow_kim_short_swiper_CHCBcJ",
+    "featured_collection_TwYege",
+    "featured_collection_NR8nbx",
+    "featured_collection_Pgq3iH",
+    "featured_collection_MYEkpn",
+    "featured_collection_Cke6rK",
+    "featured_collection_YDHhzm"
+  ]
+}

@@ -1,0 +1,129 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+
+  .txt-tit {
+    font-size: 7.6rem;
+    padding-top: 100px;
+  }
+  .txt-descrip {
+    font-size: 2rem;
+    color: #555;
+    {% comment %} background: linear-gradient(to right top, #861657, #ffa69e);
+    color: transparent;
+    -webkit-background-clip: text; {% endcomment %}
+  }
+  .findu__inner__container {
+    width: 900px;
+    margin: 20px auto;
+  }
+
+  @media screen and (max-width: 750px) {
+    .txt-tit {
+      font-size: 4.6rem;
+      padding-top: 50px;
+    }
+    .txt-descrip {
+      font-size: 1.6rem;
+      color: #555;
+      {% comment %} background: linear-gradient(to right top, #861657, #ffa69e);
+      color: transparent;
+      -webkit-background-clip: text; {% endcomment %}
+    }
+    .findu__inner__container {
+      width: 100%;
+      margin: 20px auto;
+    }
+    .container---{{ section.id }} {
+      padding:0 10px
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width section-{{ section.id }}-padding ">
+  <div class="container---{{ section.id }}">
+    <div class="">
+      <h1 class="txt-tit fw-bold text-center scroll-trigger animate--slide-in">ファインドユは誰ですか？</h1>
+      <div class="findu__inner__container scroll-trigger animate--slide-in">
+        <p class="txt-descrip">
+          30〜40代の男性のためのプレミアムショッピングサイト、findUへようこそ。<br>
+          洗練されたスタイルとスタイリッシュなfindUは、 一見無造作に見える上品なファッションを提案します。<br>
+          findUは流行に流されることなく、自分だけのスタイルを追求したいあなたのための場所です。<br>
+          フォーマルでありながら自然な魅力を追求する男性のために、<br>
+          魅力的なアイテムを厳選してご紹介します。<br>
+          findUであなたらしい特別なスタイルを完成させてください。
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="txt-tit fw-bold text-center scroll-trigger animate--slide-in">ファインドユの価値と哲学</h1>
+      <div class="findu__inner__container scroll-trigger animate--slide-in">
+        <p class="txt-descrip">
+          finduにとって最も大切な価値は「正直さ」です。<br>
+          急速に変化する日常の中で、私たちは時折、その「正直さ」という価値を忘れがちです。<br>
+          他人を欺かず、自分自身にも正直であること。<br>
+          それこそがfinduの価値観であり、哲学です。
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="txt-tit fw-bold text-center scroll-trigger animate--slide-in">ファインドユの誓い</h1>
+      <div class="findu__inner__container scroll-trigger animate--slide-in">
+        <p class="txt-descrip">
+          findUはお客様との対話とコミュニケーションを大切にし、常に耳を傾け、
+          お客様に感動を与える瞬間を作り出していきます。<br>
+          お客様に正直な価値を提供できるよう、常に謙虚な姿勢で努力してまいります。
+        </p>
+      </div>
+    </div>
+
+    <div class="py-5">
+      <div class="findu__inner__container scroll-trigger animate--slide-in">
+        <p class="txt-descrip">
+          まだまだ至らない点が多いですが、<br>
+          一つ一つ改善し、<br>
+          お客様に愛されるショッピングモールを作っていきます。どうぞよろしくお願いいたします。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "findu live",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 100
+    }
+  ]
+}
+{% endschema %}
